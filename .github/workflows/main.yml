@@ -1,0 +1,23 @@
+on: [workflow_dispatch] 
+ 
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+    - uses: actions/checkout@v2
+    
+     
+    - run: echo hello world > math-homework.txt
+    - name: test
+      run : |
+       echo "::set-output name=action_fruit::${{github.workspace}}/math-homework.txt" 
+       docker images
+       docker pull bridgecrew/checkov
+       docker run -t -v /user/tf:/tf bridgecrew/checkov -d /tf
+      id: run_test
+    - name: get test
+      run: echo ${{(steps.run_test.outputs.action_fruit)}}
+    
+    
+       
