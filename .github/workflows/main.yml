@@ -14,7 +14,7 @@ jobs:
        
        docker images
        docker pull bridgecrew/checkov
-       docker run -t -v ${{github.workspace}}:/tf  bridgecrew/checkov -d /tf -o json      
+       docker run -t -v ${{github.workspace}}:/tf  bridgecrew/checkov -d /tf      
 
    
     
