@@ -14,7 +14,7 @@ jobs:
        echo "::set-output name=action_fruit::${{github.workspace}}/math-homework.txt" 
        docker images
        docker pull bridgecrew/checkov
-       docker run  bridgecrew/checkov.
+       docker run -t -v /user/tf:/tf bridgecrew/checkov -d /tf
       id: run_test
     - name: get test
       run: echo ${{(steps.run_test.outputs.action_fruit)}}
