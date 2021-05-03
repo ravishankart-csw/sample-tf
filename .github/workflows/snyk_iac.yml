@@ -14,11 +14,12 @@ jobs:
           # For example `deployment.yaml` for a Kubernetes deployment manifest
           # or `main.tf` for a Terraform configuration file
           command: test
-          file: bhuvi11/sample-tf/s3/main.tf
+          file: ${{github.workspace}}/main.tf
           json: true
           sarif: true
-          
-      - run: ls /home/runner/work/sample-tf/sample-tf
+        
+      - name: get  
+        run: ls ${{github.workspace}}
           
               
       - name: Upload result to GitHub Code Scanning
