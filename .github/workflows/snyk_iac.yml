@@ -14,5 +14,6 @@ jobs:
           # For example `deployment.yaml` for a Kubernetes deployment manifest
           # or `main.tf` for a Terraform configuration file
           file: sample-tf/s3/main.tf
+          json: true
           
      
