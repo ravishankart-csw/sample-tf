@@ -17,6 +17,8 @@ jobs:
           json: true
           sarif: true
           
+      - uses: actions/upload-artifact@v2
+          
       - name: Upload result to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v1
         with:
