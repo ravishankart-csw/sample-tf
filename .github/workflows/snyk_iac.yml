@@ -4,6 +4,7 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Run Snyk to check Kubernetes manifest file for issues
         continue-on-error: true
         uses: snyk/actions/iac@master
